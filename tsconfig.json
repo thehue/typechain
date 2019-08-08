@@ -3,9 +3,10 @@
     "compilerOptions": {
         "module": "commonjs", //nodejs를 평범하게 사용하고 다양한걸 import하거나 export할 수 있게 만드는것
         "target": "es2015", //어떤 버전의 javascript로 컴파일 되고 싶은지,
-        "sourceMap": true //sourcemap 처리를 하고싶은지
+        "sourceMap": true, //sourcemap 처리를 하고싶은지
+        "outDir": "dist" // 컴파일된 파일들은 dist폴더로 들어감
     },
     //어떤 파일들이 컴파일 과정에 포함되는지
-    "include": ["index.ts"],
+    "include": ["src/**/*"], // 모든 typescript파일은 src폴더로 들어감
     "exclude": ["node_modules"]
 }
