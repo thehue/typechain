@@ -1,5 +1,8 @@
-console.log('hello');
-// terminal에 tsc
-//tsc는 ts파일에 있는 코드를 컴파일해서
-//index.js랑 index.js.map을 만들어줌
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const name = 'HeeYou', age = 25;
+const sayHi = (name, age, gender) => {
+    console.log(`Hello, ${name}! Your age is ${age} and gender is ${gender}`);
+};
+sayHi(name, age);
 //# sourceMappingURL=index.js.map
