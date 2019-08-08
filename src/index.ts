@@ -31,7 +31,7 @@ class Block {
     }
 }
 
-const genesisBlock: Block = new Block(0,"202020303020","","Hello",123456);
+const genesisBlock: Block = new Block(0,"2020dfsdfwaasq20303020","","a가 b에게 100만원 송금함.",123456);
 let blockchain: Block[] = [genesisBlock];
 
 //블록체인이 얼마나 긴지 알려주는 함수 -> 블록체인에 블록을 하나 더 추가할 수 있기 때문
@@ -48,7 +48,8 @@ const createNewBlock = (data: string): Block => {
     const newHash:string = Block.calculateBlockHash(newIndex, 
         previousBlock.hash, data, newTimestamp );
     const newBlock = new Block(newIndex, newHash, previousBlock.hash, data, newTimestamp);
-        //제공되는 블록이 유효한지 판단
+    
+    addBlock(newBlock);
     
     return newBlock;
 };
@@ -74,5 +75,11 @@ const addBlock = (candidateBlock:Block) :void => {
         blockchain.push(candidateBlock);
     }
 };
+
+createNewBlock('b가 200만원 입금함.');
+createNewBlock('c가 b에게 10만원 입금함');
+createNewBlock('c가 d에게 5만원 입금함');
+
+console.log(blockchain);
 
 export {};
